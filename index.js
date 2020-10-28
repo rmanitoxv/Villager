@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-from discord.ext import commands
 import youtube_dl
 import ctypes
 import ctypes.util
