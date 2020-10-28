@@ -3,11 +3,27 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
+import discord
+from discord.ext import commands
+import youtube_dl
+import ctypes
+import ctypes.util
+
+
 const prefix = '!';
 
 client.once('ready', () => {
     console.log('Villager is online!');
 });
+
+ydl_opts = {
+    'format': 'bestaudio/best',
+    'postprocessors': [{
+        'key': 'FFmpegExtractAudio',
+        'preferredcodec': 'mp3',
+        'preferredquality': '192',
+    }],
+}   
 
 
 client.on('message', message =>{
@@ -28,10 +44,10 @@ client.on('message', message =>{
             if(command === 'hello'){
                 const dispatcher = connection.play(require("path").join(__dirname, './hehe.mp3'));
             }
-            else if(command === 'hi' || 'angel'){
+            else if(command === 'hi'){
                 const dispatcher = connection.play(require("path").join(__dirname, './hehe.mp3'));
             }
-            else if(command === 'amir'|| 'gago' || 'pillager'){
+            else if(command === 'gago'){
                 const dispatcher = connection.play(require("path").join(__dirname, './huh.mp3'));
             }
             })
@@ -50,4 +66,4 @@ client.on('message', message =>{
             }      
 });
 
-client.login('NzY2NTQxMjc4MjE3MTA5NTE0.X4k3Mg.neNszqDtsGYIBUycMQe2Gyl2ddQ');
+bot.login(process.env.token);
