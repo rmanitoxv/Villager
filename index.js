@@ -3,11 +3,6 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-import youtube_dl
-import ctypes
-import ctypes.util
-
-
 const prefix = '!';
 
 client.once('ready', () => {
